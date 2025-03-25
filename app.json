@@ -3,7 +3,6 @@
     "name": "FloraBit",
     "slug": "FloraBit",
     "version": "1.0.0",
-
     "scheme": "FloraBit",
     "web": {
       "bundler": "metro",
@@ -21,28 +20,33 @@
     ],
     "experiments": {
       "typedRoutes": true,
-
       "tsconfigPaths": true
     },
-
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-
     "userInterfaceStyle": "light",
-
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anilyavas.FloraBit"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.anilyavas.FloraBit"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "4438a6de-c208-4963-9afb-9170a4b0c88a"
       }
     }
   }
