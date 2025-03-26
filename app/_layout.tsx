@@ -1,17 +1,16 @@
+import { Slot } from 'expo-router';
 import '../global.css';
+import { useColorScheme } from 'react-native';
 
-import { Stack } from 'expo-router';
-
-export const unstable_settings = {
-  // Ensure that reloading on `/modal` keeps a back button present.
-  initialRouteName: '(tabs)',
-};
+import { getTheme } from '~/constants/colors';
+import { ThemeProvider } from '~/context/ThemeProvider';
 
 export default function RootLayout() {
+  const colorScheme = useColorScheme();
+  const theme = getTheme(colorScheme === 'dark');
   return (
-    <Stack>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-    </Stack>
+    <ThemeProvider value={theme}>
+      <Slot />
+    </ThemeProvider>
   );
 }
