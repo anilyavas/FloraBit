@@ -6,21 +6,32 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: 'white',
-        tabBarInactiveTintColor: 'gainsboro',
+        tabBarActiveTintColor: 'black',
+        tabBarInactiveTintColor: 'gray',
         headerShown: false,
         tabBarShowLabel: false,
         tabBarStyle: {
-          backgroundColor: '#4CAF50',
-          height: 40,
-          marginVertical: 50,
+          backgroundColor: '#FFFFFF',
+          height: 60,
+          marginVertical: 30,
           marginHorizontal: 20,
           position: 'absolute',
           borderRadius: 30,
+          paddingBottom: 10,
+          shadowColor: 'black',
+          shadowOffset: {
+            width: 0,
+            height: 1,
+          },
+          shadowOpacity: 0.25,
+          shadowRadius: 3.84,
+          elevation: 5,
         },
         tabBarIconStyle: {
           justifyContent: 'center',
           alignItems: 'center',
+          height: '100%',
+          marginTop: 5,
         },
       }}>
       <Tabs.Screen
@@ -34,8 +45,12 @@ export default function TabLayout() {
         name="two"
         options={{
           title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="calendar" color={color} />,
         }}
+      />
+      <Tabs.Screen
+        name="add"
+        options={{ tabBarIcon: ({ color }) => <TabBarIcon name="plus" color={color} /> }}
       />
     </Tabs>
   );

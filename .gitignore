@@ -16,6 +16,7 @@ expo-env.d.ts
 eas.json
 ios
 android
+.env
 
 # macOS
 .DS_Store
