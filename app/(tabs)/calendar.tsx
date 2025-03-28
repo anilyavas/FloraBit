@@ -1,10 +1,10 @@
 import { SafeAreaView, View, Text } from 'react-native';
 
-export default function Add() {
+export default function Calendar() {
   return (
     <View className="flex-1 bg-[#C8D8C4]">
       <SafeAreaView>
-        <Text>Add new one</Text>
+        <Text>Calendar new one</Text>
       </SafeAreaView>
     </View>
   );
