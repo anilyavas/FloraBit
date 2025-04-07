@@ -17,6 +17,7 @@ import {
 export default function Page() {
   const { signIn, setActive, isLoaded } = useSignIn();
   const { startOAuthFlow: googleAuth } = useOAuth({ strategy: 'oauth_google' });
+  const { startOAuthFlow: appleAuth } = useOAuth({ strategy: 'oauth_apple' });
   const router = useRouter();
   const [emailAddress, setEmailAddress] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -61,6 +62,24 @@ export default function Page() {
     }
   }, [googleAuth, setActive, router]);
 
+  const handleAppleAuth = React.useCallback(async () => {
+    try {
+      const { createdSessionId } = await appleAuth();
+
+      if (createdSessionId) {
+        if (setActive) {
+          await setActive({ session: createdSessionId });
+        }
+        router.push('/(tabs)');
+      } else {
+        throw new Error('Apple sign-in failed to create a session.');
+      }
+    } catch (error) {
+      console.error('Error while logging in with Apple', error);
+      setError('Apple sign-in failed. Please try again.');
+    }
+  }, [appleAuth, setActive, router]);
+
   return (
     <SafeAreaView style={styles.container}>
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
@@ -93,6 +112,10 @@ export default function Page() {
           <Pressable style={styles.googleButton} onPress={handleGoogleAuth}>
             <Text style={styles.signInGoogleText}>Sign in with Google</Text>
             <FontAwesome name="google" size={20} color="black" />
+          </Pressable>
+          <Pressable style={styles.googleButton} onPress={handleAppleAuth}>
+            <Text style={styles.signInGoogleText}>Sign in with Apple</Text>
+            <FontAwesome name="apple" size={20} color="black" />
           </Pressable>
           <View style={styles.signupContainer}>
             <Text style={styles.bottomText}>Don't have an account?</Text>
