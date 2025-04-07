@@ -33,32 +33,38 @@ export default function PlantScanner() {
   const retake = () => setUri(undefined);
 
   return (
-    <View className="flex-1 bg-[#EEF2E5]">
+    <SafeAreaView className="flex-1 items-center justify-start bg-[#EEF2E5] px-4 pt-6">
       {uri ? (
-        <View className="flex-1 items-center justify-center p-4">
-          <Image source={{ uri }} className="h-4/6 w-full rounded-xl" resizeMode="cover" />
+        <View className="w-full items-center">
+          <Image source={{ uri }} className="h-96 w-full rounded-xl" resizeMode="cover" />
           <Text className="mt-4 text-center text-base font-medium">Photo captured!</Text>
           <Pressable onPress={retake} className="mt-4 rounded-lg bg-green-600 px-4 py-2">
             <Text className="font-semibold text-white">Retake</Text>
           </Pressable>
         </View>
       ) : (
-        <CameraView ref={ref} facing={facing} style={{ flex: 1 }} className="absolute inset-0 z-0">
-          <SafeAreaView className="flex-1 justify-between px-4 py-6">
-            <View className="items-end">
-              <Pressable onPress={toggleCameraFacing}>
-                <Text className="text-lg font-semibold text-white">Flip Camera</Text>
-              </Pressable>
-            </View>
-            <View className="items-center">
-              <Pressable
-                onPress={takePicture}
-                className="h-16 w-16 rounded-full border-4 border-green-600 bg-white"
-              />
-            </View>
-          </SafeAreaView>
-        </CameraView>
+        <>
+          <View className="h-[80%] w-full overflow-hidden rounded-xl">
+            <CameraView ref={ref} facing={facing} style={{ flex: 1 }} className="w-full">
+              <View className="flex-1 justify-between bg-transparent p-4">
+                <View className="items-end">
+                  <Pressable onPress={toggleCameraFacing}>
+                    <Text className="text-lg font-semibold text-white">Flip</Text>
+                  </Pressable>
+                </View>
+              </View>
+            </CameraView>
+          </View>
+
+          <View className="mt-6 items-center">
+            <Pressable
+              onPress={takePicture}
+              className="h-16 w-16 rounded-full border-4 border-green-600 bg-white"
+            />
+            <Text className="mt-2 text-center font-medium text-gray-700">Scan Plant</Text>
+          </View>
+        </>
       )}
-    </View>
+    </SafeAreaView>
   );
 }
