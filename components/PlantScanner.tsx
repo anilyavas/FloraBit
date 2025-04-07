@@ -1,68 +1,64 @@
-import * as ImagePicker from 'expo-image-picker';
-import { useState } from 'react';
-import { View, Text, ActivityIndicator, Button, Alert } from 'react-native';
+import { CameraType, CameraView, useCameraPermissions } from 'expo-camera';
+import { useRef, useState } from 'react';
+import { View, Text, Pressable, Image } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function PlantScanner() {
-  const [image, setImage] = useState<string | null>(null);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [result, setResult] = useState<string | null>(null);
+  const [permission, requestPermission] = useCameraPermissions();
+  const [facing, setFacing] = useState<CameraType>('back');
+  const [uri, setUri] = useState<string | undefined>(undefined);
+  const ref = useRef<CameraView>(null);
 
-  const handleImagePick = async (fromCamera: boolean) => {
-    const permissionResult = fromCamera
-      ? await ImagePicker.requestCameraPermissionsAsync()
-      : await ImagePicker.requestMediaLibraryPermissionsAsync();
-
-    if (permissionResult.status !== 'granted') {
-      Alert.alert('Permission Required', 'You need to grant permission to use this feature.');
-    }
-
-    const pickerResult = fromCamera
-      ? await ImagePicker.launchCameraAsync({ base64: true })
-      : await ImagePicker.launchImageLibraryAsync({ base64: true });
-    if (!pickerResult.canceled) {
-      setImage(pickerResult.assets[0].uri);
-      analyzeImage(pickerResult.assets[0].base64);
-    }
-  };
-
-  const analyzeImage = async (base64Image: string | undefined) => {
-    if (!base64Image) return;
-    setLoading(true);
-
-    try {
-      const apiKey = process.env.EXPO_PUBLIC_OPENAI_API_KEY;
-      const response = await fetch('https://api.openai.com/v1/completions', {
-        headers: {
-          Authorization: `Bearer ${apiKey}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          model: 'gpt-4-turbo-vision',
-          messages: [
-            { role: 'system', content: 'You are an AI botanist that analyzes plant health.' },
-            {
-              role: 'user',
-              content:
-                'Analyze this plant and provide details on its health, potential diseases, and care suggestions.',
-            },
-            { role: 'user', content: { image: base64Image } },
-          ],
-          max_tokens: 300,
-        }),
-      });
-
-      const data = await response.json();
-      setResult(data.choices[0].message.content);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  if (loading) {
-    return <ActivityIndicator size="large" />;
+  if (!permission) return <View />;
+  if (!permission.granted) {
+    return (
+      <SafeAreaView className="flex-1 items-center justify-center bg-[#EEF2E5]">
+        <Text className="mb-4">We need your permission to use the camera</Text>
+        <Pressable onPress={requestPermission} className="rounded-lg bg-green-600 px-4 py-2">
+          <Text className="font-medium text-white">Grant Permission</Text>
+        </Pressable>
+      </SafeAreaView>
+    );
   }
 
-  return <View />;
+  const takePicture = async () => {
+    const photo = await ref.current?.takePictureAsync();
+    if (photo?.uri) setUri(photo.uri);
+  };
+
+  const toggleCameraFacing = () => {
+    setFacing((current) => (current === 'back' ? 'front' : 'back'));
+  };
+
+  const retake = () => setUri(undefined);
+
+  return (
+    <View className="flex-1 bg-[#EEF2E5]">
+      {uri ? (
+        <View className="flex-1 items-center justify-center p-4">
+          <Image source={{ uri }} className="h-4/6 w-full rounded-xl" resizeMode="cover" />
+          <Text className="mt-4 text-center text-base font-medium">Photo captured!</Text>
+          <Pressable onPress={retake} className="mt-4 rounded-lg bg-green-600 px-4 py-2">
+            <Text className="font-semibold text-white">Retake</Text>
+          </Pressable>
+        </View>
+      ) : (
+        <CameraView ref={ref} facing={facing} style={{ flex: 1 }} className="absolute inset-0 z-0">
+          <SafeAreaView className="flex-1 justify-between px-4 py-6">
+            <View className="items-end">
+              <Pressable onPress={toggleCameraFacing}>
+                <Text className="text-lg font-semibold text-white">Flip Camera</Text>
+              </Pressable>
+            </View>
+            <View className="items-center">
+              <Pressable
+                onPress={takePicture}
+                className="h-16 w-16 rounded-full border-4 border-green-600 bg-white"
+              />
+            </View>
+          </SafeAreaView>
+        </CameraView>
+      )}
+    </View>
+  );
 }
