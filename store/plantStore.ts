@@ -3,19 +3,19 @@ import { create } from 'zustand';
 interface ScanResult {
   uri: string;
   issue: string;
-  cause: string;
-  solution: string;
+  cause?: string;
+  solution?: string;
 }
 
-interface PlantScanState {
+interface PlantScanStore {
   scan: ScanResult | null;
   loading: boolean;
-  setScan: (scan: ScanResult) => void;
+  setScan: (scan: ScanResult | null) => void;
   setLoading: (loading: boolean) => void;
   reset: () => void;
 }
 
-export const usePlantScanStore = create<PlantScanState>((set) => ({
+export const usePlantScanStore = create<PlantScanStore>((set) => ({
   scan: null,
   loading: false,
   setScan: (scan) => set({ scan }),

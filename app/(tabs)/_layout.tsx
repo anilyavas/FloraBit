@@ -1,8 +1,14 @@
-import { Tabs } from 'expo-router';
+import { useUser } from '@clerk/clerk-expo';
+import { Redirect, Tabs } from 'expo-router';
 
 import { TabBarIcon } from '../../components/TabBarIcon';
 
 export default function TabLayout() {
+  const { user } = useUser();
+
+  if (!user) {
+    return <Redirect href="/(auth)/sign-in" />;
+  }
   return (
     <Tabs
       screenOptions={{
