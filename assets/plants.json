@@ -103,5 +103,125 @@
     "water": "Water every 1-2 weeks",
     "temperature": "18-29°C (65-85°F)",
     "image": "https://images.unsplash.com/photo-1596724878582-76f1a8fdc24f?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Jade Plant",
+    "id": "11",
+    "scientific_name": "Crassula ovata",
+    "care": {
+      "light": "Bright, indirect light or direct sunlight",
+      "water": "Water when top soil feels dry; avoid overwatering",
+      "temperature": "18-24°C (65-75°F)",
+      "humidity": "Low to average"
+    },
+    "image": "https://images.unsplash.com/photo-1616189597001-9046fce2594d?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Parlor Palm",
+    "id": "12",
+    "scientific_name": "Chamaedorea elegans",
+    "care": {
+      "light": "Low to moderate indirect light",
+      "water": "Water when top soil dries out",
+      "temperature": "18-27°C (65-80°F)",
+      "humidity": "Moderate to high"
+    },
+    "image": "https://images.unsplash.com/photo-1687269111857-3b398711c2f4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Chinese Evergreen",
+    "id": "13",
+    "scientific_name": "Aglaonema",
+    "care": {
+      "light": "Low to medium light",
+      "water": "Water thoroughly when soil is dry",
+      "temperature": "18-24°C (65-75°F)",
+      "humidity": "Medium to high"
+    },
+    "image": "https://images.unsplash.com/photo-1620803366004-119b57f54cd6?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Calathea",
+    "id": "14",
+    "scientific_name": "Calathea orbifolia",
+    "care": {
+      "light": "Bright, indirect light",
+      "water": "Keep soil consistently moist",
+      "temperature": "18-24°C (65-75°F)",
+      "humidity": "High"
+    },
+    "image": "https://images.unsplash.com/photo-1714507767656-2fb307e1b03d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Fiddle Leaf Fig",
+    "id": "15",
+    "scientific_name": "Ficus lyrata",
+    "care": {
+      "light": "Bright, filtered light",
+      "water": "Water when top inch of soil is dry",
+      "temperature": "16-24°C (60-75°F)",
+      "humidity": "Moderate to high"
+    },
+    "image": "https://images.unsplash.com/photo-1545239705-1564e58b9e4a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Dracaena",
+    "id": "16",
+    "scientific_name": "Dracaena marginata",
+    "care": {
+      "light": "Bright, indirect light",
+      "water": "Water when top inch of soil is dry",
+      "temperature": "18-24°C (65-75°F)",
+      "humidity": "Average"
+    },
+    "image": "https://www.fidanburada.com/dracaena-marginata-tek-govdeli-50-60cm-salon-bitkileri-fidan-burada-13341-61-B.jpg"
+  },
+  {
+    "name": "Philodendron",
+    "id": "17",
+    "scientific_name": "Philodendron hederaceum",
+    "care": {
+      "light": "Low to bright indirect light",
+      "water": "Allow top inch of soil to dry before watering",
+      "temperature": "16-24°C (60-75°F)",
+      "humidity": "Average"
+    },
+    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTTpw0Ebkuq9gTXYatNShJlDjAJoacnjgAA50igfedK8WDRxEW79999prfRhYKKogS-HAmMC89oW9rlKg5Y8v_Vlw"
+  },
+  {
+    "name": "Dieffenbachia",
+    "id": "18",
+    "scientific_name": "Dieffenbachia seguine",
+    "care": {
+      "light": "Bright, indirect light",
+      "water": "Keep soil evenly moist, not soggy",
+      "temperature": "18-27°C (65-80°F)",
+      "humidity": "Moderate to high"
+    },
+    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQbOqXKKETKecVbeQ_tCeHMdT9kzMidFIE6ugxhkSYqdzCO7yTu4TC77uWuSdiX5MAPkhYkyBjEkRvP-EoOq7eAfQ"
+  },
+  {
+    "name": "English Ivy",
+    "id": "19",
+    "scientific_name": "Hedera helix",
+    "care": {
+      "light": "Bright, indirect light",
+      "water": "Keep soil moist but not soggy",
+      "temperature": "10-21°C (50-70°F)",
+      "humidity": "Average"
+    },
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfhxHJTLIANm2c9wuNwgN3rGcGIFBrOnjA7Za2rd2i-RldaXp9UdeHxuFeQGWgbZBpWpuwo0L1TA-llRT2bsW7ug"
+  },
+  {
+    "name": "Lucky Bamboo",
+    "id": "20",
+    "scientific_name": "Dracaena sanderiana",
+    "care": {
+      "light": "Low to bright indirect light",
+      "water": "Keep roots covered in water or keep soil slightly moist",
+      "temperature": "18-30°C (65-85°F)",
+      "humidity": "Average"
+    },
+    "image": "https://cdn-ikpmoof.nitrocdn.com/ZkjAbaHFvYmzwgIyEQwqsjGuTjgYaRbK/assets/images/optimized/rev-fe73e9d/oxy-plants.com/wp-content/uploads/2021/03/lucky-bamboo-3.jpg"
   }
 ]
