@@ -1,55 +1,28 @@
-import { useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList, View, Text, Image } from 'react-native';
+import { FlatList, View, Text, Image } from 'react-native';
+
+import plants from '../assets/plants.json';
 
 export default function PlantCard() {
-  const [loading, setLoading] = useState(false);
-  const [plants, setPlants] = useState<any[]>([]);
-
-  useEffect(() => {
-    const fetchPlants = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch(
-          'https://raw.githubusercontent.com/anilyavas/plant-database/master/json'
-        );
-        const data = await response.json();
-        setPlants(data.slice(0, 10));
-      } catch (error) {
-        console.error('Error fetching plant data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchPlants();
-  }, []);
-
-  if (loading) return <ActivityIndicator size="large" />;
   return (
-    <View style={{ flex: 1 }}>
+    <View className="flex-1 bg-[#C8D8C4] py-4">
       <FlatList
         data={plants}
         horizontal
         showsHorizontalScrollIndicator={false}
-        keyExtractor={(item) => item.id.toString()}
+        keyExtractor={(item) => item.id}
+        contentContainerStyle={{ paddingHorizontal: 16 }}
         renderItem={({ item }) => (
-          <View
-            style={{ borderRadius: 12, backgroundColor: '#C8D8C4', padding: 10, marginRight: 12 }}>
+          <View className="mr-4 w-40 items-center rounded-2xl bg-white p-4 shadow shadow-black/10">
             {item.image ? (
               <Image
-                source={{
-                  uri: item.image.startsWith('data:image')
-                    ? item.image
-                    : `data:image/jpeg;base64,${item.image}`,
-                }}
-                style={{ width: 100, height: 100, borderRadius: 8 }}
+                source={{ uri: item.image }}
+                className="mb-3 h-32 w-32 rounded-xl"
+                resizeMode="cover"
               />
             ) : (
-              <View style={{ width: 100, height: 100, backgroundColor: '#ccc', borderRadius: 8 }} />
+              <View className="mb-3 h-32 w-32 rounded-xl bg-gray-300" />
             )}
-            <Text style={{ color: '#2C2C2C', fontWeight: 'bold' }}>
-              {item.common_name || 'Unknown'}
-            </Text>
-            <Text style={{ color: '#2C2C2C' }}>{item.scientific_name}</Text>
+            <Text className="text-center text-base font-semibold text-[#2C2C2C]">{item.name}</Text>
           </View>
         )}
       />

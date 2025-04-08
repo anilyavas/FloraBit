@@ -1,0 +1,107 @@
+[
+  {
+    "name": "Spider Plant",
+    "id": "1",
+    "scientific_name": "Chlorophytum comosum",
+    "care": {
+      "light": "Bright, indirect sunlight",
+      "water": "Water moderately; let the soil dry out between watering",
+      "temperature": "18-24°C (65-75°F)",
+      "humidity": "Moderate to high"
+    },
+    "image": "https://images.unsplash.com/photo-1611527664689-d430dd2a6774?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Aloe Vera",
+    "id": "2",
+    "scientific_name": "Aloe barbadensis miller",
+    "care": {
+      "light": "Bright, indirect or direct sunlight",
+      "water": "Water every 2-3 weeks, allow soil to dry out completely",
+      "temperature": "13-27°C (55-80°F)",
+      "humidity": "Low"
+    },
+    "image": "https://images.unsplash.com/photo-1569745358610-b01866003860?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "ZZ Plant",
+    "id": "3",
+    "scientific_name": "Zamioculcas zamiifolia",
+    "care": {
+      "light": "Low to bright indirect light",
+      "water": "Water when top inch of soil is dry",
+      "temperature": "15-24°C (60-75°F)",
+      "humidity": "Average"
+    },
+    "image": "https://images.unsplash.com/photo-1622673037877-18ee56d1f990?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Rubber Plant",
+    "id": "4",
+    "scientific_name": "Ficus elastica",
+    "care": {
+      "light": "Bright, indirect light",
+      "water": "Keep soil moist in summer, reduce in winter",
+      "temperature": "16-26°C (60-80°F)",
+      "humidity": "Medium to high"
+    },
+    "image": "https://images.unsplash.com/photo-1591656884447-8562e2373a66?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Boston Fern",
+    "id": "5",
+    "scientific_name": "Nephrolepis exaltata",
+    "care": {
+      "light": "Indirect light or partial shade",
+      "water": "Keep soil moist, water frequently",
+      "temperature": "16-24°C (60-75°F)",
+      "humidity": "High"
+    },
+    "image": "https://images.unsplash.com/photo-1610491536492-cee9f12c860f?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Orchid",
+    "id": "6",
+    "scientific_name": "Orchidaceae",
+    "light": "Bright, indirect sunlight",
+    "water": "Water once a week; let soil dry between waterings",
+    "temperature": "18-24°C (65-75°F)",
+    "image": "https://images.unsplash.com/photo-1583846712268-a77d97b7fd68?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Peace Lily",
+    "id": "7",
+    "scientific_name": "Spathiphyllum",
+    "light": "Low to medium, indirect light",
+    "water": "Keep soil moist, water when top soil feels dry",
+    "temperature": "18-26°C (65-80°F)",
+    "image": "https://images.unsplash.com/photo-1642049671771-8b22a7152bda?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Snake Plant",
+    "id": "8",
+    "scientific_name": "Sansevieria trifasciata",
+    "light": "Low to bright indirect light",
+    "water": "Water every 2-3 weeks",
+    "temperature": "15-29°C (60-85°F)",
+    "image": "https://images.unsplash.com/photo-1593482892290-f54927ae1bb6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Monstera",
+    "id": "9",
+    "scientific_name": "Monstera deliciosa",
+    "light": "Bright, indirect sunlight",
+    "water": "Water when top 2-3 cm of soil are dry",
+    "temperature": "18-30°C (65-86°F)",
+    "image": "https://plus.unsplash.com/premium_photo-1663962158789-0ab624c4f17d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "name": "Pothos",
+    "id": "10",
+    "scientific_name": "Epipremnum aureum",
+    "light": "Low to bright, indirect light",
+    "water": "Water every 1-2 weeks",
+    "temperature": "18-29°C (65-85°F)",
+    "image": "https://images.unsplash.com/photo-1596724878582-76f1a8fdc24f?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  }
+]

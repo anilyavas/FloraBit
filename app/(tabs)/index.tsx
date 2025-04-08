@@ -19,8 +19,8 @@ export default function Home() {
           <FontAwesome name="sign-out" size={20} color="darkred" />
         </View>
         <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
-          <View className="p-4">
-            <Text className="text-xl font-bold text-gray-500">Explore Plants</Text>
+          <View className="p-2">
+            <Text className="pl-4 text-xl font-bold text-gray-500">Explore Plants</Text>
             <PlantCard />
           </View>
         </ScrollView>
