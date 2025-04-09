@@ -101,7 +101,7 @@ export default function PlantScanner() {
   };
 
   return (
-    <SafeAreaView className="flex-1 items-center justify-start bg-[#EEF2E5] px-4 pt-6">
+    <SafeAreaView className="flex-1 items-center justify-start px-4 pt-6">
       {scan?.uri ? (
         <View className="w-full items-center">
           <Image source={{ uri: scan.uri }} className="h-96 w-full rounded-xl" resizeMode="cover" />
