@@ -1,3 +1,4 @@
+import { FontAwesome } from '@expo/vector-icons';
 import { router, useLocalSearchParams } from 'expo-router';
 import { View, Text, SafeAreaView, Image, ScrollView, Pressable } from 'react-native';
 
@@ -8,49 +9,56 @@ export default function PlantDetails() {
   const plant = plants.find((p) => p.id === id);
 
   return (
-    <View className="flex-1 bg-[#C8D8C4]">
+    <View className="flex-1 bg-[#E7F0DC]">
       <SafeAreaView className="flex-1">
-        <ScrollView className="flex-1 px-4 py-6">
-          <View className="mb-4 flex-row items-center">
-            <Text className="flex-1 text-center text-3xl font-semibold text-neutral-800">
-              {plant?.name}
-            </Text>
-            <Pressable className="absolute right-5 justify-end" onPress={() => router.back()}>
-              <Text className="text-xl">X</Text>
-            </Pressable>
-          </View>
+        <View className="px-4 pb-1 pt-2">
+          <Pressable onPress={() => router.back()} className="flex-row items-center gap-1">
+            <FontAwesome size={20} color="#4B6C4A" name="arrow-left" />
+            <Text className="text-lg font-medium text-[#4B6C4A]">Back</Text>
+          </Pressable>
+        </View>
 
+        <ScrollView className="flex-1 px-4 pb-12 pt-2" showsVerticalScrollIndicator={false}>
           {plant?.image && (
             <Image
               source={{ uri: plant.image }}
-              className="mb-6 h-72 w-full rounded-2xl shadow-md"
+              className="mb-6 h-72 w-full rounded-3xl shadow-lg"
               resizeMode="cover"
             />
           )}
 
-          <View className="space-y-3 rounded-xl bg-white p-4 shadow-sm">
-            <Text className="text-base text-gray-700">
-              <Text className="font-medium text-gray-900">Scientific Name: </Text>
-              <Text className="italic">{plant?.scientific_name}</Text>
-            </Text>
+          <Text className="mb-2 text-3xl font-bold text-[#2F3E2E]">{plant?.name}</Text>
+          <Text className="mb-6 text-base italic text-gray-700">{plant?.scientific_name}</Text>
 
-            <View className="space-y-2 border-t border-gray-200 pt-3">
-              <Text className="text-base text-gray-700">
-                <Text className="font-medium">🌞 Light: </Text>
-                {plant?.care?.light}
-              </Text>
-              <Text className="text-base text-gray-700">
-                <Text className="font-medium">💧 Water: </Text>
-                {plant?.care?.water}
-              </Text>
-              <Text className="text-base text-gray-700">
-                <Text className="font-medium">🌡️ Temperature: </Text>
-                {plant?.care?.temperature}
-              </Text>
-              <Text className="text-base text-gray-700">
-                <Text className="font-medium">💦 Humidity: </Text>
-                {plant?.care?.humidity}
-              </Text>
+          {/* Care Sections */}
+          <View className="gap-2 space-y-4">
+            {/* Description */}
+            <View className="rounded-xl bg-white/90 p-4 shadow">
+              <Text className="mb-1 text-lg font-semibold text-[#4B6C4A]">📖 Description</Text>
+              <Text className="text-base text-gray-700">{plant?.description}</Text>
+            </View>
+            {/* Light */}
+            <View className="rounded-xl bg-white/90 p-4 shadow">
+              <Text className="mb-1 text-lg font-semibold text-[#4B6C4A]">🌞 Light</Text>
+              <Text className="text-base text-gray-700">{plant?.care?.light}</Text>
+            </View>
+
+            {/* Water */}
+            <View className="rounded-xl bg-white/90 p-4 shadow">
+              <Text className="mb-1 text-lg font-semibold text-[#4B6C4A]">💧 Water</Text>
+              <Text className="text-base text-gray-700">{plant?.care?.water}</Text>
+            </View>
+
+            {/* Temperature */}
+            <View className="rounded-xl bg-white/90 p-4 shadow">
+              <Text className="mb-1 text-lg font-semibold text-[#4B6C4A]">🌡️ Temperature</Text>
+              <Text className="text-base text-gray-700">{plant?.care?.temperature}</Text>
+            </View>
+
+            {/* Humidity */}
+            <View className="rounded-xl bg-white/90 p-4 shadow">
+              <Text className="mb-1 text-lg font-semibold text-[#4B6C4A]">💦 Humidity</Text>
+              <Text className="text-base text-gray-700">{plant?.care?.humidity}</Text>
             </View>
           </View>
         </ScrollView>

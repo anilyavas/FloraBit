@@ -3,6 +3,7 @@
     "name": "Spider Plant",
     "id": "1",
     "scientific_name": "Chlorophytum comosum",
+    "description": "A popular and resilient houseplant, Spider Plant is known for its arching leaves and baby spiderettes that dangle from the mother plant. It’s easy to care for and great for beginners. Plus, it’s excellent at purifying indoor air.",
     "care": {
       "light": "Bright, indirect sunlight",
       "water": "Water moderately; let the soil dry out between watering",
@@ -15,6 +16,7 @@
     "name": "Aloe Vera",
     "id": "2",
     "scientific_name": "Aloe barbadensis miller",
+    "description": "Famous for its soothing gel, Aloe Vera is both a decorative and medicinal succulent. It thrives in bright light and requires very little water, making it perfect for forgetful plant parents.",
     "care": {
       "light": "Bright, indirect or direct sunlight",
       "water": "Water every 2-3 weeks, allow soil to dry out completely",
@@ -27,6 +29,7 @@
     "name": "ZZ Plant",
     "id": "3",
     "scientific_name": "Zamioculcas zamiifolia",
+    "description": "The ZZ Plant is practically indestructible. With waxy, dark green leaves, it’s perfect for low-light environments and doesn’t need frequent watering—ideal for offices or dimly lit rooms.",
     "care": {
       "light": "Low to bright indirect light",
       "water": "Water when top inch of soil is dry",
@@ -39,6 +42,7 @@
     "name": "Rubber Plant",
     "id": "4",
     "scientific_name": "Ficus elastica",
+    "description": "With its bold, glossy leaves, the Rubber Plant adds a dramatic flair to indoor spaces. It enjoys consistent care and makes a statement in bright corners of your home.",
     "care": {
       "light": "Bright, indirect light",
       "water": "Keep soil moist in summer, reduce in winter",
@@ -51,6 +55,7 @@
     "name": "Boston Fern",
     "id": "5",
     "scientific_name": "Nephrolepis exaltata",
+    "description": "A lush, feathery plant that brings tropical vibes indoors. The Boston Fern loves humidity and moist soil, making it a favorite for bathrooms or shaded patios.",
     "care": {
       "light": "Indirect light or partial shade",
       "water": "Keep soil moist, water frequently",
@@ -63,165 +68,195 @@
     "name": "Orchid",
     "id": "6",
     "scientific_name": "Orchidaceae",
-    "light": "Bright, indirect sunlight",
-    "water": "Water once a week; let soil dry between waterings",
-    "temperature": "18-24°C (65-75°F)",
+    "description": "Elegant and exotic, Orchids bloom in striking shapes and colors. While they may seem delicate, they’re hardy when their simple care needs are met—especially indirect light and consistent watering.",
+    "care": {
+      "light": "Bright, indirect sunlight",
+      "water": "Water once a week; let soil dry between waterings",
+      "temperature": "18-24°C (65-75°F)",
+      "humidity": "Moderate"
+    },
     "image": "https://images.unsplash.com/photo-1583846712268-a77d97b7fd68?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     "name": "Peace Lily",
     "id": "7",
     "scientific_name": "Spathiphyllum",
-    "light": "Low to medium, indirect light",
-    "water": "Keep soil moist, water when top soil feels dry",
-    "temperature": "18-26°C (65-80°F)",
+    "description": "Known for its graceful white blooms and air-purifying abilities, the Peace Lily is both beautiful and beneficial. It signals its thirst by drooping slightly, making it easy to know when to water.",
+    "care": {
+      "light": "Low to medium, indirect light",
+      "water": "Keep soil moist, water when top soil feels dry",
+      "temperature": "18-26°C (65-80°F)",
+      "humidity": "High"
+    },
     "image": "https://images.unsplash.com/photo-1642049671771-8b22a7152bda?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     "name": "Snake Plant",
     "id": "8",
     "scientific_name": "Sansevieria trifasciata",
-    "light": "Low to bright indirect light",
-    "water": "Water every 2-3 weeks",
-    "temperature": "15-29°C (60-85°F)",
+    "description": "Also called Mother-in-law’s Tongue, this plant is nearly unkillable. It tolerates neglect, low light, and infrequent watering—plus it improves indoor air quality.",
+    "care": {
+      "light": "Low to bright indirect light",
+      "water": "Water every 2-3 weeks",
+      "temperature": "15-29°C (60-85°F)",
+      "humidity": "Low to moderate"
+    },
     "image": "https://images.unsplash.com/photo-1593482892290-f54927ae1bb6?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     "name": "Monstera",
     "id": "9",
     "scientific_name": "Monstera deliciosa",
-    "light": "Bright, indirect sunlight",
-    "water": "Water when top 2-3 cm of soil are dry",
-    "temperature": "18-30°C (65-86°F)",
+    "description": "Famous for its split leaves and bold, jungle look, the Monstera adds instant drama to any space. It thrives in bright, indirect light and enjoys a bit of humidity.",
+    "care": {
+      "light": "Bright, indirect sunlight",
+      "water": "Water when top 2-3 cm of soil are dry",
+      "temperature": "18-30°C (65-86°F)",
+      "humidity": "Moderate to high"
+    },
     "image": "https://plus.unsplash.com/premium_photo-1663962158789-0ab624c4f17d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     "name": "Pothos",
     "id": "10",
     "scientific_name": "Epipremnum aureum",
-    "light": "Low to bright, indirect light",
-    "water": "Water every 1-2 weeks",
-    "temperature": "18-29°C (65-85°F)",
+    "description": "One of the easiest trailing plants to grow, Pothos adapts well to various conditions. It’s perfect for hanging baskets or as a climbing vine, and purifies the air as it grows.",
+    "care": {
+      "light": "Low to bright, indirect light",
+      "water": "Water every 1-2 weeks",
+      "temperature": "18-29°C (65-85°F)",
+      "humidity": "Low to moderate"
+    },
     "image": "https://images.unsplash.com/photo-1596724878582-76f1a8fdc24f?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     "name": "Jade Plant",
     "id": "11",
     "scientific_name": "Crassula ovata",
+    "description": "The Jade Plant, also known as the Money Tree or Lucky Plant, is a succulent that is loved for its thick, fleshy leaves and tree-like appearance. Its round, glossy leaves are typically green, but may develop a reddish tint at the edges with plenty of sunlight. Often associated with good fortune, the Jade Plant is easy to care for and thrives in dry conditions, making it ideal for busy plant owners or those new to houseplants.",
     "care": {
-      "light": "Bright, indirect light or direct sunlight",
-      "water": "Water when top soil feels dry; avoid overwatering",
+      "light": "Bright light, some direct sunlight",
+      "water": "Water when soil is completely dry",
       "temperature": "18-24°C (65-75°F)",
-      "humidity": "Low to average"
+      "humidity": "Low"
     },
-    "image": "https://images.unsplash.com/photo-1616189597001-9046fce2594d?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  },
-  {
-    "name": "Parlor Palm",
-    "id": "12",
-    "scientific_name": "Chamaedorea elegans",
-    "care": {
-      "light": "Low to moderate indirect light",
-      "water": "Water when top soil dries out",
-      "temperature": "18-27°C (65-80°F)",
-      "humidity": "Moderate to high"
-    },
-    "image": "https://images.unsplash.com/photo-1687269111857-3b398711c2f4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  },
-  {
-    "name": "Chinese Evergreen",
-    "id": "13",
-    "scientific_name": "Aglaonema",
-    "care": {
-      "light": "Low to medium light",
-      "water": "Water thoroughly when soil is dry",
-      "temperature": "18-24°C (65-75°F)",
-      "humidity": "Medium to high"
-    },
-    "image": "https://images.unsplash.com/photo-1620803366004-119b57f54cd6?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    "image": "https://images.unsplash.com/photo-1621552330975-f5f9c85dc9c9?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     "name": "Calathea",
-    "id": "14",
-    "scientific_name": "Calathea orbifolia",
+    "id": "12",
+    "scientific_name": "Calathea spp.",
+    "description": "Calathea, often referred to as the prayer plant, is a tropical perennial known for its striking, decorative foliage. The plant's leaves feature vibrant patterns, ranging from deep greens to purples, with unique stripes and bold contrasts. What sets Calatheas apart is their fascinating leaf movement — they open during the day and fold up at night, resembling hands in prayer, which is where the common name comes from.",
     "care": {
-      "light": "Bright, indirect light",
-      "water": "Keep soil consistently moist",
+      "light": "Low to medium, indirect light",
+      "water": "Keep soil moist but not soggy",
       "temperature": "18-24°C (65-75°F)",
       "humidity": "High"
     },
-    "image": "https://images.unsplash.com/photo-1714507767656-2fb307e1b03d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  },
-  {
-    "name": "Fiddle Leaf Fig",
-    "id": "15",
-    "scientific_name": "Ficus lyrata",
-    "care": {
-      "light": "Bright, filtered light",
-      "water": "Water when top inch of soil is dry",
-      "temperature": "16-24°C (60-75°F)",
-      "humidity": "Moderate to high"
-    },
-    "image": "https://images.unsplash.com/photo-1545239705-1564e58b9e4a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-  },
-  {
-    "name": "Dracaena",
-    "id": "16",
-    "scientific_name": "Dracaena marginata",
-    "care": {
-      "light": "Bright, indirect light",
-      "water": "Water when top inch of soil is dry",
-      "temperature": "18-24°C (65-75°F)",
-      "humidity": "Average"
-    },
-    "image": "https://www.fidanburada.com/dracaena-marginata-tek-govdeli-50-60cm-salon-bitkileri-fidan-burada-13341-61-B.jpg"
+    "image": "https://images.unsplash.com/photo-1602879952653-a3830f12a7cb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     "name": "Philodendron",
-    "id": "17",
+    "id": "13",
     "scientific_name": "Philodendron hederaceum",
+    "description": "Philodendrons are a popular genus of tropical plants known for their easy-going nature and stunning foliage. These plants come in a variety of shapes, sizes, and leaf colors, ranging from heart-shaped leaves to more intricate, split-leaf varieties. Their versatility makes them suitable for both beginners and experienced plant owners alike, and they’re commonly used in both homes and offices for their aesthetic appeal and air-purifying qualities.",
     "care": {
-      "light": "Low to bright indirect light",
-      "water": "Allow top inch of soil to dry before watering",
-      "temperature": "16-24°C (60-75°F)",
-      "humidity": "Average"
+      "light": "Bright, indirect light",
+      "water": "Water when top inch of soil is dry",
+      "temperature": "18-26°C (65-80°F)",
+      "humidity": "Moderate"
     },
     "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTTpw0Ebkuq9gTXYatNShJlDjAJoacnjgAA50igfedK8WDRxEW79999prfRhYKKogS-HAmMC89oW9rlKg5Y8v_Vlw"
   },
   {
-    "name": "Dieffenbachia",
-    "id": "18",
-    "scientific_name": "Dieffenbachia seguine",
+    "name": "Fiddle Leaf Fig",
+    "id": "14",
+    "scientific_name": "Ficus lyrata",
+    "description": "The Fiddle Leaf Fig is a striking and popular indoor plant known for its large, glossy, violin-shaped leaves. Its bold foliage makes it a statement piece in any room, whether it’s placed in a living room, office, or entryway. Native to West Africa, this plant has become a favorite for interior decorators and plant enthusiasts due to its dramatic appearance and ability to grow into a tall tree with the right care.",
     "care": {
       "light": "Bright, indirect light",
-      "water": "Keep soil evenly moist, not soggy",
-      "temperature": "18-27°C (65-80°F)",
+      "water": "Water when top few inches of soil are dry",
+      "temperature": "18-24°C (65-75°F)",
       "humidity": "Moderate to high"
+    },
+    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ6w6g6jfEr4qUc8zNB5T5e7DFfLHds9yuJHWv6xMmb9EdF7maX_Z_rG5e9NKa-h5rmyuYvSZNclVpo43lSKR6nuw"
+  },
+  {
+    "name": "Dracaena",
+    "id": "15",
+    "scientific_name": "Dracaena marginata",
+    "description": "Dracaena is a diverse genus of plants that are popular for their attractive foliage and low-maintenance nature, making them ideal houseplants. With over 120 species, Dracaenas come in various shapes and sizes, from small, bushy plants to tall, tree-like specimens. Their long, lance-shaped leaves are often green, but many varieties feature colorful stripes or variegation in shades of yellow, red, or white. Dracaenas are known for their air-purifying qualities, making them a great addition to any indoor space.",
+    "care": {
+      "light": "Bright, indirect light",
+      "water": "Water when top inch of soil is dry",
+      "temperature": "18-26°C (65-80°F)",
+      "humidity": "Low to moderate"
+    },
+    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRZ7yZ1zEVAuptO31MisrRXuKVLC8S05ZqlEOPPcYOzJzkEnsxSHOLw8B7eVTTu7BLH-4j5rIAfJPkKy4QDnPdH2w"
+  },
+  {
+    "name": "Chinese Evergreen",
+    "id": "16",
+    "scientific_name": "Aglaonema",
+    "description": "Chinese Evergreen, scientifically known as Aglaonema, is a stunning and low-maintenance houseplant known for its attractive foliage and resilience. Native to Southeast Asia, it features glossy, lance-shaped leaves that are typically green, but many varieties display beautiful patterns of silver, white, and pink, adding a pop of color to any indoor space. This plant is not only eye-catching but also an excellent choice for improving indoor air quality, making it a popular choice for homes and offices.",
+    "care": {
+      "light": "Low to bright, indirect light",
+      "water": "Water when top 1-2 inches of soil is dry",
+      "temperature": "18-24°C (65-75°F)",
+      "humidity": "Moderate"
+    },
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA9JvY-IJ6ZXLnve1qqGiceO1lZT7_nCulEr6WanWV3cAbIUR2jBZjYwJGaPmuhpfpZ92CIztX8hxKuoJaAI5i1Q"
+  },
+  {
+    "name": "Dieffenbachia",
+    "id": "17",
+    "scientific_name": "Dieffenbachia spp.",
+    "description": "Dieffenbachia, commonly known as Dumb Cane, is a striking, low-maintenance houseplant with large, glossy leaves adorned with bold patterns of green, cream, and white. Native to the tropical regions of Central and South America, this plant brings an elegant touch to any indoor space, whether on a table, shelf, or as part of a decorative display. Its distinctive foliage and ease of care make it a popular choice for both beginners and seasoned plant enthusiasts.",
+    "care": {
+      "light": "Filtered light or partial shade",
+      "water": "Water when top inch of soil is dry",
+      "temperature": "18-24°C (65-75°F)",
+      "humidity": "High"
     },
     "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQbOqXKKETKecVbeQ_tCeHMdT9kzMidFIE6ugxhkSYqdzCO7yTu4TC77uWuSdiX5MAPkhYkyBjEkRvP-EoOq7eAfQ"
   },
   {
-    "name": "English Ivy",
-    "id": "19",
-    "scientific_name": "Hedera helix",
+    "name": "Schefflera",
+    "id": "18",
+    "scientific_name": "Schefflera arboricola",
+    "description": "Schefflera, also known as the Umbrella Tree, is a versatile and attractive houseplant renowned for its glossy, palmate leaves that radiate from a central stem, resembling the spokes of an umbrella. Native to tropical regions of Asia and the Pacific Islands, Schefflera is a popular indoor plant due to its ability to thrive in a variety of lighting conditions and its low-maintenance care requirements. With its elegant foliage and upright growth habit, it adds a tropical flair to any space.",
     "care": {
       "light": "Bright, indirect light",
-      "water": "Keep soil moist but not soggy",
-      "temperature": "10-21°C (50-70°F)",
-      "humidity": "Average"
+      "water": "Water when soil feels dry 1 inch down",
+      "temperature": "15-26°C (60-80°F)",
+      "humidity": "Moderate"
     },
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfhxHJTLIANm2c9wuNwgN3rGcGIFBrOnjA7Za2rd2i-RldaXp9UdeHxuFeQGWgbZBpWpuwo0L1TA-llRT2bsW7ug"
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTHC8lcEVpWI8h1OOOw1We_gaUZZ9mEc5OVO6KVyNGn8P6UowF2AnR6jJDpdkG9h3Rulm7Jl-D5MVBaxY0ZdPABQ"
   },
   {
-    "name": "Lucky Bamboo",
-    "id": "20",
-    "scientific_name": "Dracaena sanderiana",
+    "name": "Anthurium",
+    "id": "19",
+    "scientific_name": "Anthurium andraeanum",
+    "description": "Anthurium, also known as the Flamingo Flower or Laceleaf, is a stunning tropical plant prized for its vibrant, waxy, red, pink, or white spathes and striking spadix, which resemble a flower. Native to the rainforests of Central and South America, this ornamental beauty is cherished for its long-lasting blooms and its ability to bring a splash of color and elegance to any space. Its glossy, heart-shaped leaves and unique flower structure make it a standout addition to both homes and offices.",
     "care": {
-      "light": "Low to bright indirect light",
-      "water": "Keep roots covered in water or keep soil slightly moist",
-      "temperature": "18-30°C (65-85°F)",
-      "humidity": "Average"
+      "light": "Bright, indirect light",
+      "water": "Water when top 1-2 inches of soil are dry",
+      "temperature": "20-25°C (68-77°F)",
+      "humidity": "High"
     },
-    "image": "https://cdn-ikpmoof.nitrocdn.com/ZkjAbaHFvYmzwgIyEQwqsjGuTjgYaRbK/assets/images/optimized/rev-fe73e9d/oxy-plants.com/wp-content/uploads/2021/03/lucky-bamboo-3.jpg"
+    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQHWfeGPUl-Y_Ksllp2ZRjPF3gGIKkEdroZJIkhZFKuBIRHxARKcaQ8ZGo1UlJB4V_wLo5pBDtqwaEYC_C_YVo6rQ"
+  },
+  {
+    "name": "Peperomia",
+    "id": "20",
+    "scientific_name": "Peperomia spp.",
+    "description": "Peperomia is a diverse genus of small, compact houseplants known for their attractive foliage and easy-to-care-for nature. With over 1,000 species, Peperomias come in a variety of shapes, sizes, and colors, from glossy, succulent-like leaves to variegated patterns and textured surfaces. Native to tropical and subtropical regions of the Americas, Peperomias are perfect for indoor spaces where they can thrive in moderate light and with minimal maintenance.",
+    "care": {
+      "light": "Bright, indirect light",
+      "water": "Allow soil to dry between watering",
+      "temperature": "18-24°C (65-75°F)",
+      "humidity": "Moderate"
+    },
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl1IXrx3eSTPk5w5kAk0lMgtp5yPxDseD9n37qnl-Re5QWGG5EFGVG7LORD4dcPZe-Ylxh9pTMnfV2OmkJ8ZyxOA"
   }
 ]
