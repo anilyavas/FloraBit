@@ -44,14 +44,14 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="leaf" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="water"
+        name="plants"
         options={{
           title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="tint" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="leaf" color={color} />,
         }}
       />
       <Tabs.Screen
