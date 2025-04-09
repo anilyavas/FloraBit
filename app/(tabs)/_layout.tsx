@@ -48,15 +48,15 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="scanner"
-        options={{ tabBarIcon: ({ color }) => <TabBarIcon name="camera" color={color} /> }}
-      />
-      <Tabs.Screen
         name="water"
         options={{
           title: 'Tab Two',
           tabBarIcon: ({ color }) => <TabBarIcon name="tint" color={color} />,
         }}
+      />
+      <Tabs.Screen
+        name="scanner"
+        options={{ tabBarIcon: ({ color }) => <TabBarIcon name="camera" color={color} /> }}
       />
       <Tabs.Screen
         name="calendar"

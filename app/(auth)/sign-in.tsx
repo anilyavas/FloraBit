@@ -109,14 +109,16 @@ export default function Page() {
               <Text style={styles.signupText}>Sign in</Text>
             </Pressable>
           </View>
-          <Pressable style={styles.googleButton} onPress={handleGoogleAuth}>
-            <Text style={styles.signInGoogleText}>Sign in with Google</Text>
-            <FontAwesome name="google" size={20} color="black" />
-          </Pressable>
-          <Pressable style={styles.googleButton} onPress={handleAppleAuth}>
-            <Text style={styles.signInGoogleText}>Sign in with Apple</Text>
-            <FontAwesome name="apple" size={20} color="black" />
-          </Pressable>
+          <View className="w-full flex-row items-center justify-between">
+            <Pressable style={styles.googleButton} onPress={handleGoogleAuth}>
+              <Text style={styles.signInGoogleText}>Sign in with Google</Text>
+              <FontAwesome name="google" size={20} color="black" />
+            </Pressable>
+            <Pressable style={styles.googleButton} onPress={handleAppleAuth}>
+              <Text style={styles.signInGoogleText}>Sign in with Apple</Text>
+              <FontAwesome name="apple" size={20} color="black" />
+            </Pressable>
+          </View>
           <View style={styles.signupContainer}>
             <Text style={styles.bottomText}>Don't have an account?</Text>
             <Link href="/sign-up" asChild>
@@ -210,7 +212,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     paddingVertical: 14,
     marginTop: 20,
-    width: '100%',
+    width: '48%',
     gap: 10,
   },
   signInGoogleText: {
