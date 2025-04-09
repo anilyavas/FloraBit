@@ -3,6 +3,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import { View, SafeAreaView, StatusBar, Platform, Text, Image, ScrollView } from 'react-native';
 
 import PlantCard from '~/components/PlantCard';
+import PlantCare from '~/components/PlantCare';
 
 export default function Home() {
   const { user } = useClerk();
@@ -23,6 +24,10 @@ export default function Home() {
           <View className="p-2">
             <Text className="pl-4 text-xl font-bold text-gray-500">Explore Plants</Text>
             <PlantCard />
+          </View>
+          <View className="p-2">
+            <Text className="pl-4 text-xl font-bold text-gray-500">General Plant Care</Text>
+            <PlantCare />
           </View>
         </ScrollView>
       </SafeAreaView>
