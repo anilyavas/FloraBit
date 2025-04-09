@@ -62,10 +62,6 @@ export default function TabLayout() {
         name="calendar"
         options={{ tabBarIcon: ({ color }) => <TabBarIcon name="calendar" color={color} /> }}
       />
-      <Tabs.Screen
-        name="settings"
-        options={{ tabBarIcon: ({ color }) => <TabBarIcon name="gear" color={color} /> }}
-      />
     </Tabs>
   );
 }

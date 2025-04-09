@@ -20,6 +20,9 @@ export default function WaterTrack() {
             }}
             markingType="custom"
           />
+          <Text className="mt-4 text-gray-500">
+            This is the water tracking screen. You can track your watering schedule here.
+          </Text>
         </View>
       </SafeAreaView>
       <StatusBar barStyle="dark-content" />
