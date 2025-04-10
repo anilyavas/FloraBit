@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 import { View, Text, Pressable, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { usePlantScanStore } from '~/store/plantStore';
+import { usePlantScanStore } from '~/store/plantScanStore';
 
 export default function PlantScanner() {
   const [permission, requestPermission] = useCameraPermissions();

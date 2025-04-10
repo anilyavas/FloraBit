@@ -1,24 +1,62 @@
+// stores/usePlantStore.ts
 import { create } from 'zustand';
 
-interface ScanResult {
-  uri: string;
-  issue: string;
-  cause?: string;
-  solution?: string;
-}
+import { supabase } from '../utils/supabase';
 
-interface PlantScanStore {
-  scan: ScanResult | null;
+type Plant = {
+  id: string;
+  user_id: string;
+  name: string;
+  image_url?: string | null;
+  created_at: string;
+};
+
+type PlantStore = {
+  plants: Plant[];
   loading: boolean;
-  setScan: (scan: ScanResult | null) => void;
-  setLoading: (loading: boolean) => void;
-  reset: () => void;
-}
+  error: string | null;
+  fetchPlants: (userId: string) => Promise<void>;
+  addPlant: (userId: string, plant: Omit<Plant, 'id' | 'created_at' | 'user_id'>) => Promise<void>;
+};
 
-export const usePlantScanStore = create<PlantScanStore>((set) => ({
-  scan: null,
+export const usePlantStore = create<PlantStore>((set) => ({
+  plants: [],
   loading: false,
-  setScan: (scan) => set({ scan }),
-  setLoading: (loading) => set({ loading }),
-  reset: () => set({ scan: null, loading: false }),
+  error: null,
+
+  fetchPlants: async (userId: string) => {
+    try {
+      set({ loading: true, error: null });
+
+      const { data, error } = await supabase
+        .from('plants')
+        .select('*')
+        .eq('user_id', userId)
+        .order('created_at', { ascending: false });
+
+      if (error) throw error;
+
+      set({ plants: data || [], loading: false });
+    } catch (err: any) {
+      set({ error: err.message, loading: false });
+    }
+  },
+
+  addPlant: async (userId, plant) => {
+    try {
+      const { data, error } = await supabase
+        .from('plants')
+        .insert([{ ...plant, user_id: userId }])
+        .select()
+        .single();
+
+      if (error) throw error;
+
+      set((state) => ({
+        plants: [data!, ...state.plants],
+      }));
+    } catch (err: any) {
+      set({ error: err.message });
+    }
+  },
 }));
