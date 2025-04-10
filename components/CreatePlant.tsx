@@ -82,6 +82,7 @@ export default function AddPlantScreen() {
         placeholder="Enter plant name"
         value={name}
         onChangeText={setName}
+        placeholderTextColor="#999"
       />
 
       <TouchableOpacity
