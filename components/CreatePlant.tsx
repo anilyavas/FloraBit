@@ -1,4 +1,3 @@
-// app/plants/add.tsx
 import { useAuth } from '@clerk/clerk-expo';
 import * as ImagePicker from 'expo-image-picker';
 import { useState } from 'react';
@@ -43,22 +42,24 @@ export default function AddPlantScreen() {
 
     try {
       setUploading(true);
-
       let imageUrl = null;
 
       if (image) {
+        const response = await fetch(image);
+        const blob = await response.blob();
+
         const fileName = `${userId}-${Date.now()}.jpg`;
-        const { data, error } = await supabase.storage.from('plant-images').upload(fileName, {
-          uri: image,
-          type: 'image/jpeg',
-          name: fileName,
-        } as any);
+
+        const { error } = await supabase.storage.from('plant-images').upload(fileName, blob, {
+          contentType: 'image/jpeg',
+          upsert: true,
+        });
 
         if (error) throw error;
 
         const { data: urlData } = supabase.storage.from('plant-images').getPublicUrl(fileName);
 
-        imageUrl = urlData.publicUrl;
+        imageUrl = urlData?.publicUrl || null;
       }
 
       await addPlant(userId, { name, image_url: imageUrl });

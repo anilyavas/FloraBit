@@ -1,4 +1,4 @@
-import { Platform, SafeAreaView, StatusBar, View } from 'react-native';
+import { Platform, SafeAreaView, StatusBar, View, Text } from 'react-native';
 
 import PlantScanner from '~/components/PlantScanner';
 
@@ -10,6 +10,9 @@ export default function Scanner() {
         style={{
           paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
         }}>
+        <Text className="border-b-hairline border-gray-500 p-4 text-xl font-bold text-gray-500">
+          Plant Doctor
+        </Text>
         <PlantScanner />
       </SafeAreaView>
       <StatusBar barStyle="dark-content" />
