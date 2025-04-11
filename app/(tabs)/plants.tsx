@@ -26,10 +26,13 @@ export default function PlantCollection() {
   if (loading) return <ActivityIndicator size="large" className="self-center" />;
   if (error)
     return (
-      <Text className="text-center text-lg font-semibold text-red-500">
-        Error while fetching plants.
-      </Text>
+      <View className="flex-1 items-center justify-center">
+        <Text className="text-center text-lg font-semibold text-red-500">
+          Error while fetching plants.
+        </Text>
+      </View>
     );
+
   return (
     <View className="flex-1 bg-[#C8D8C4]">
       <SafeAreaView
@@ -43,12 +46,19 @@ export default function PlantCollection() {
             <Text className="text-2xl font-bold text-blue-500">+</Text>
           </Pressable>
         </View>
-        {plants.length === 0 && (
+        {plants.length === 0 ? (
           <View className="p-4">
             <Text className="text-gray-500">
               This is the plant collection screen. You can add, remove, or view plants here. For
-              adding plant, click on + button on the top right.
+              adding plant, click on the + button on the top right.
             </Text>
+          </View>
+        ) : (
+          <View className="p-4">
+            {/* Your list of plants can go here, if plants are available */}
+            {/* Example: */}
+            <Text className="text-lg">Your Plants:</Text>
+            {/* Render plants here */}
           </View>
         )}
         <Modal

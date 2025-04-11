@@ -38,7 +38,8 @@ export default function AddPlantScreen() {
   };
 
   const handleAddPlant = async () => {
-    if (!name || !userId) return;
+    if (!name || !userId)
+      return Alert.alert('Error', 'Please provide a plant name and ensure you are logged in.');
 
     try {
       setUploading(true);
@@ -50,14 +51,20 @@ export default function AddPlantScreen() {
 
         const fileName = `${userId}-${Date.now()}.jpg`;
 
-        const { error } = await supabase.storage.from('plant-images').upload(fileName, blob, {
-          contentType: 'image/jpeg',
-          upsert: true,
-        });
+        const { error: uploadError } = await supabase.storage
+          .from('plant-images')
+          .upload(fileName, blob, {
+            contentType: 'image/jpeg',
+            upsert: true,
+          });
 
-        if (error) throw error;
+        if (uploadError) throw new Error(uploadError.message);
 
-        const { data: urlData } = supabase.storage.from('plant-images').getPublicUrl(fileName);
+        const { data: urlData, error: urlError } = supabase.storage
+          .from('plant-images')
+          .getPublicUrl(fileName);
+
+        if (urlError) throw new Error(urlError.message);
 
         imageUrl = urlData?.publicUrl || null;
       }
@@ -68,7 +75,7 @@ export default function AddPlantScreen() {
       setImage(null);
       Alert.alert('Success', 'Plant added!');
     } catch (err: any) {
-      Alert.alert('Error', err.message);
+      Alert.alert('Error', err.message || 'Something went wrong. Please try again.');
     } finally {
       setUploading(false);
     }
