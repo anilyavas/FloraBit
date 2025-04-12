@@ -57,7 +57,14 @@ export default function PlantCollection() {
           <View className="p-4">
             {/* Your list of plants can go here, if plants are available */}
             {/* Example: */}
-            <Text className="text-lg">Your Plants:</Text>
+            <Text className="text-lg font-semibold">Your Plants:</Text>
+            {plants.map((plant) => (
+              <View key={plant.id} className="rounded-lg bg-gray-200 p-2">
+                <Text className="text-gray-700">Plant Name: {plant.name}</Text>
+                <Text>Location: {plant.description}</Text>
+              </View>
+            ))}
+            {/* Replace with your own component to display plants */}
             {/* Render plants here */}
           </View>
         )}
