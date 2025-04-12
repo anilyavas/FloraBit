@@ -1,4 +1,3 @@
-import * as ImagePicker from 'expo-image-picker';
 import { create } from 'zustand';
 
 import { supabase } from '../utils/supabase';
@@ -7,7 +6,7 @@ type Plant = {
   id: string;
   user_id: string;
   name: string;
-  image_url?: string | null;
+  description: string | null;
   created_at: string;
 };
 
@@ -16,11 +15,24 @@ type PlantStore = {
   loading: boolean;
   error: string | null;
   fetchPlants: (userId: string) => Promise<void>;
-  addPlant: (userId: string, plant: Omit<Plant, 'id' | 'created_at' | 'user_id'>) => Promise<void>;
-  pickImage: () => Promise<string | null>;
+  addPlant: (
+    userId: string,
+    plant: {
+      name: string;
+      description?: string | null;
+    }
+  ) => Promise<void>;
+  deletePlant: (plantId: string) => Promise<void>;
+  updatePlant: (
+    plantId: string,
+    updatedFields: {
+      name?: string;
+      description?: string | null;
+    }
+  ) => Promise<void>;
 };
 
-export const usePlantStore = create<PlantStore>((set) => ({
+export const usePlantStore = create<PlantStore>((set, get) => ({
   plants: [],
   loading: false,
   error: null,
@@ -47,25 +59,9 @@ export const usePlantStore = create<PlantStore>((set) => ({
     try {
       set({ loading: true, error: null });
 
-      let imageUrl = plant.image_url || null;
-
-      if (plant.image_url) {
-        const { data: imageData, error: imageError } = await supabase.storage
-          .from('plant-images')
-          .upload(`${userId}-${Date.now()}.jpg`, plant.image_url);
-
-        if (imageError) throw imageError;
-
-        const { data: urlData } = supabase.storage
-          .from('plant-images')
-          .getPublicUrl(imageData!.path);
-
-        imageUrl = urlData.publicUrl;
-      }
-
       const { data, error } = await supabase
         .from('plants')
-        .insert([{ ...plant, user_id: userId, image_url: imageUrl }])
+        .insert([{ ...plant, user_id: userId }])
         .select()
         .single();
 
@@ -80,20 +76,42 @@ export const usePlantStore = create<PlantStore>((set) => ({
     }
   },
 
-  pickImage: async () => {
-    const { granted } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    if (!granted) return null;
+  deletePlant: async (plantId) => {
+    try {
+      set({ loading: true, error: null });
 
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      quality: 0.7,
-      allowsEditing: true,
-    });
+      const { error } = await supabase.from('plants').delete().eq('id', plantId);
 
-    if (!result.canceled && result.assets.length > 0) {
-      return result.assets[0].uri;
+      if (error) throw error;
+
+      set((state) => ({
+        plants: state.plants.filter((plant) => plant.id !== plantId),
+        loading: false,
+      }));
+    } catch (err: any) {
+      set({ error: err.message, loading: false });
     }
+  },
 
-    return null;
+  updatePlant: async (plantId, updatedFields) => {
+    try {
+      set({ loading: true, error: null });
+
+      const { data, error } = await supabase
+        .from('plants')
+        .update(updatedFields)
+        .eq('id', plantId)
+        .select()
+        .single();
+
+      if (error) throw error;
+
+      set((state) => ({
+        plants: state.plants.map((plant) => (plant.id === plantId ? { ...plant, ...data } : plant)),
+        loading: false,
+      }));
+    } catch (err: any) {
+      set({ error: err.message, loading: false });
+    }
   },
 }));
