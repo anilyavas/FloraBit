@@ -49,7 +49,7 @@ export default function AddPlantScreen() {
 
       <TextInput
         className="mb-4 rounded-lg border border-gray-300 p-3 text-base"
-        placeholder="Optional description / placement"
+        placeholder="Optional description / Placement / Care tips"
         value={description}
         onChangeText={setDescription}
         placeholderTextColor="#999"

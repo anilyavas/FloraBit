@@ -23,7 +23,15 @@ export default function PlantCollection() {
     if (userId) fetchPlants(userId);
   }, [userId]);
 
-  if (loading) return <ActivityIndicator size="large" className="self-center" />;
+  if (loading)
+    return (
+      <View className="flex-1 items-center justify-center bg-[#C8D8C4]">
+        <View className="border-b-hairline flex-row items-center border-gray-500 p-4">
+          <Text className="flex-1 text-xl font-bold text-gray-500">Plant Collection</Text>
+        </View>
+        <ActivityIndicator size="large" className="self-center" />
+      </View>
+    );
   if (error)
     return (
       <View className="flex-1 items-center justify-center">
@@ -55,17 +63,18 @@ export default function PlantCollection() {
           </View>
         ) : (
           <View className="p-4">
-            {/* Your list of plants can go here, if plants are available */}
-            {/* Example: */}
-            <Text className="text-lg font-semibold">Your Plants:</Text>
             {plants.map((plant) => (
-              <View key={plant.id} className="rounded-lg bg-gray-200 p-2">
-                <Text className="text-gray-700">Plant Name: {plant.name}</Text>
-                <Text>Location: {plant.description}</Text>
+              <View
+                key={plant.id}
+                className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+                <Text className="mb-1 text-lg font-semibold text-green-900">🌿 {plant.name}</Text>
+                {plant.description ? (
+                  <Text className="text-lg text-gray-600">📍 {plant.description}</Text>
+                ) : (
+                  <Text className="text-sm italic text-gray-400">No description added</Text>
+                )}
               </View>
             ))}
-            {/* Replace with your own component to display plants */}
-            {/* Render plants here */}
           </View>
         )}
         <Modal
