@@ -15,6 +15,10 @@ export default function WaterTrack() {
         </View>
         <ScrollView className="flex-1 p-4">
           <WateringCalendarScreen />
+          <Text className="p-2 text-center font-semibold text-gray-500">
+            Select your already existed plant and keep track on your watering days with clicking and
+            marking them.
+          </Text>
         </ScrollView>
       </SafeAreaView>
       <StatusBar barStyle="dark-content" />

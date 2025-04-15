@@ -1,4 +1,5 @@
 import { useAuth } from '@clerk/clerk-expo';
+import { AntDesign, FontAwesome } from '@expo/vector-icons';
 import { useEffect, useState } from 'react';
 import {
   SafeAreaView,
@@ -16,7 +17,7 @@ import { usePlantStore } from '~/store/plantStore';
 
 export default function PlantCollection() {
   const { userId } = useAuth();
-  const { fetchPlants, plants, loading, error } = usePlantStore();
+  const { fetchPlants, plants, loading, error, deletePlant } = usePlantStore();
   const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
@@ -70,13 +71,28 @@ export default function PlantCollection() {
             {plants.map((plant) => (
               <View
                 key={plant.id}
-                className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
-                <Text className="mb-1 text-lg font-semibold text-green-900">🌿 {plant.name}</Text>
-                {plant.description ? (
-                  <Text className="text-lg text-gray-600">📍 {plant.description}</Text>
-                ) : (
-                  <Text className="text-sm italic text-gray-400">No description added</Text>
-                )}
+                className="m-2 rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+                <View className="flex-row items-center">
+                  <View className="flex-1">
+                    <Text className="mb-1 text-lg font-semibold text-green-900">
+                      🌿 {plant.name}
+                    </Text>
+                    {plant.description ? (
+                      <Text className="text-lg text-gray-600">📍 {plant.description}</Text>
+                    ) : (
+                      <Text className="text-sm italic text-gray-400">No description added</Text>
+                    )}
+                  </View>
+                  <View className="flex-row gap-3">
+                    <AntDesign name="edit" size={20} color="grey" />
+                    <FontAwesome
+                      name="trash"
+                      size={20}
+                      color="darkred"
+                      onPress={() => deletePlant(plant.id)}
+                    />
+                  </View>
+                </View>
               </View>
             ))}
           </View>
