@@ -25,12 +25,16 @@ export default function PlantCollection() {
 
   if (loading)
     return (
-      <View className="flex-1 items-center justify-center bg-[#C8D8C4]">
+      <SafeAreaView
+        className="flex-1 bg-[#C8D8C4]"
+        style={{
+          paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
+        }}>
         <View className="border-b-hairline flex-row items-center border-gray-500 p-4">
           <Text className="flex-1 text-xl font-bold text-gray-500">Plant Collection</Text>
         </View>
         <ActivityIndicator size="large" className="self-center" />
-      </View>
+      </SafeAreaView>
     );
   if (error)
     return (
