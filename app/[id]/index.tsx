@@ -22,7 +22,7 @@ export default function PlantDetails() {
           {plant?.image && (
             <Image
               source={{ uri: plant.image }}
-              className="mb-6 h-72 w-full rounded-3xl shadow-lg"
+              className="mb-6 h-96 w-full rounded-3xl shadow-lg"
               resizeMode="cover"
             />
           )}
