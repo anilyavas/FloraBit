@@ -10,6 +10,7 @@ import {
   ActivityIndicator,
   Pressable,
   Modal,
+  Image,
 } from 'react-native';
 
 import CreatePlant from '~/components/CreatePlant';
@@ -73,12 +74,20 @@ export default function PlantCollection() {
                 key={plant.id}
                 className="m-2 rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
                 <View className="flex-row items-center">
+                  <View>
+                    <Image
+                      source={{
+                        uri: 'https://png.pngtree.com/template/20191024/ourmid/pngtree-flower-pot-and-plant-logo-growth-vector-logo-image_322946.jpg',
+                      }}
+                      className="h-20 w-20"
+                    />
+                  </View>
                   <View className="flex-1">
-                    <Text className="mb-1 text-lg font-semibold text-green-900">
+                    <Text className="text-md mb-1 font-semibold text-green-900">
                       🌿 {plant.name}
                     </Text>
                     {plant.description ? (
-                      <Text className="text-lg text-gray-600">📍 {plant.description}</Text>
+                      <Text className="text-md text-gray-600">📍 {plant.description}</Text>
                     ) : (
                       <Text className="text-sm italic text-gray-400">No description added</Text>
                     )}
