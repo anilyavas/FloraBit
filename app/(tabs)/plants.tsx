@@ -13,6 +13,7 @@ import {
   Image,
 } from 'react-native';
 
+import ConfirmDeleteModal from '~/components/ConfirmDelete';
 import CreatePlant from '~/components/CreatePlant';
 import { usePlantStore } from '~/store/plantStore';
 
@@ -20,6 +21,8 @@ export default function PlantCollection() {
   const { userId } = useAuth();
   const { fetchPlants, plants, loading, error, deletePlant } = usePlantStore();
   const [modalVisible, setModalVisible] = useState(false);
+  const [confirmVisible, setConfirmVisible] = useState(false);
+  const [selectedPlant, setSelectedPlant] = useState<null | { id: string; name: string }>(null);
 
   useEffect(() => {
     if (userId) fetchPlants(userId);
@@ -98,9 +101,23 @@ export default function PlantCollection() {
                       name="trash"
                       size={20}
                       color="darkred"
-                      onPress={() => deletePlant(plant.id)}
+                      onPress={() => {
+                        setSelectedPlant({ id: plant.id, name: plant.name });
+                        setConfirmVisible(true);
+                      }}
                     />
                   </View>
+                  {selectedPlant && (
+                    <ConfirmDeleteModal
+                      visible={confirmVisible}
+                      plantName={selectedPlant.name}
+                      onClose={() => setConfirmVisible(false)}
+                      onConfirm={() => {
+                        deletePlant(selectedPlant.id);
+                        setConfirmVisible(false);
+                      }}
+                    />
+                  )}
                 </View>
               </View>
             ))}
