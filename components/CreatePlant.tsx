@@ -4,7 +4,7 @@ import { View, Text, TextInput, TouchableOpacity, ActivityIndicator, Alert } fro
 
 import { usePlantStore } from '../store/plantStore';
 
-export default function AddPlantScreen() {
+export default function AddPlantScreen({ closeModal }: { closeModal: () => void }) {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [uploading, setUploading] = useState(false);
@@ -28,6 +28,7 @@ export default function AddPlantScreen() {
       setName('');
       setDescription('');
       Alert.alert('Success', 'Plant added!');
+      closeModal();
     } catch (err: any) {
       Alert.alert('Error', err.message || 'Something went wrong. Please try again.');
     } finally {

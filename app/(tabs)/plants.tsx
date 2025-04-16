@@ -113,7 +113,7 @@ export default function PlantCollection() {
           className="rounded-xl bg-[#c8d8c4]"
           visible={modalVisible}
           transparent={false}>
-          <CreatePlant />
+          <CreatePlant closeModal={() => setModalVisible(false)} />
         </Modal>
       </SafeAreaView>
       <StatusBar barStyle="dark-content" />
