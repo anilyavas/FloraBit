@@ -1,8 +1,7 @@
 import { CameraType, CameraView, useCameraPermissions } from 'expo-camera';
 import * as FileSystem from 'expo-file-system';
 import { useRef, useState } from 'react';
-import { View, Text, Pressable, Image } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { View, Text, Pressable, Image, SafeAreaView, ActivityIndicator } from 'react-native';
 
 import { usePlantScanStore } from '~/store/plantScanStore';
 
@@ -52,7 +51,7 @@ export default function PlantScanner() {
               content: [
                 {
                   type: 'text',
-                  text: 'Identify any visible disease or problem in this plant image and suggest a cause and a possible solution.',
+                  text: 'You are a plant disease expert. Analyze the plant in this image and describe any visible issues, possible causes, and suggested treatments. If the plant appears healthy, say so clearly.',
                 },
                 {
                   type: 'image_url',
@@ -102,23 +101,21 @@ export default function PlantScanner() {
 
   return (
     <SafeAreaView className="flex-1 items-center justify-start px-4 pt-6">
-      {scan?.uri ? (
+      {loading ? (
+        <View className="w-full flex-1 items-center justify-center">
+          <ActivityIndicator size="large" color="#16a34a" />
+          <Text className="mt-4 font-medium text-gray-700">Analyzing image...</Text>
+        </View>
+      ) : scan?.uri ? (
         <View className="w-full items-center">
           <Image source={{ uri: scan.uri }} className="h-96 w-full rounded-xl" resizeMode="cover" />
-          {loading ? (
-            <Text className="mt-4 text-center text-base font-medium">Analyzing...</Text>
-          ) : (
-            <View className="mt-4 w-full rounded-lg bg-white p-4 shadow">
-              <Text className="mb-2 text-lg font-bold text-green-700">Diagnosis Result</Text>
-              <Text className="text-sm text-gray-800">{scan.issue}</Text>
-            </View>
-          )}
-
-          {!loading && (
-            <Pressable onPress={reset} className="mt-6 rounded-lg bg-green-600 px-4 py-2">
-              <Text className="font-semibold text-white">Scan Another</Text>
-            </Pressable>
-          )}
+          <View className="mt-4 w-full rounded-lg bg-white p-4 shadow">
+            <Text className="mb-2 text-lg font-bold text-green-700">Diagnosis Result</Text>
+            <Text className="text-sm text-gray-800">{scan.issue}</Text>
+          </View>
+          <Pressable onPress={reset} className="mt-6 rounded-lg bg-green-600 px-4 py-2">
+            <Text className="font-semibold text-white">Scan Another</Text>
+          </Pressable>
         </View>
       ) : (
         <>
