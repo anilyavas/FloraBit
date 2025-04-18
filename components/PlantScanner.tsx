@@ -1,7 +1,15 @@
 import { CameraType, CameraView, useCameraPermissions } from 'expo-camera';
 import * as FileSystem from 'expo-file-system';
 import { useRef, useState } from 'react';
-import { View, Text, Pressable, Image, SafeAreaView, ActivityIndicator } from 'react-native';
+import {
+  View,
+  Text,
+  Pressable,
+  Image,
+  SafeAreaView,
+  ActivityIndicator,
+  ScrollView,
+} from 'react-native';
 
 import { usePlantScanStore } from '~/store/plantScanStore';
 
@@ -33,18 +41,23 @@ export default function PlantScanner() {
     });
 
     try {
+      console.log('Reading image as base64...');
       const base64 = await FileSystem.readAsStringAsync(uri, {
         encoding: FileSystem.EncodingType.Base64,
       });
 
+      const apiKey = process.env.EXPO_PUBLIC_OPENAI_API_KEY;
+      console.log('API KEY EXISTS:', !!apiKey);
+
+      console.log('Sending request to OpenAI...');
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${process.env.EXPO_PUBLIC_OPENAI_API_KEY}`,
+          Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          model: 'gpt-4-vision-preview',
+          model: 'gpt-4-turbo',
           messages: [
             {
               role: 'user',
@@ -66,8 +79,23 @@ export default function PlantScanner() {
         }),
       });
 
+      console.log('API response status:', response.status);
+
       const data = await response.json();
-      const resultText = data?.choices?.[0]?.message?.content || 'No response';
+      console.log('API response:', JSON.stringify(data, null, 2));
+
+      if (!data?.choices || !data.choices[0]?.message?.content) {
+        console.warn('Invalid response format:', data);
+        setScan({
+          uri,
+          issue: 'No meaningful response from AI.',
+          cause: '',
+          solution: '',
+        });
+        return;
+      }
+
+      const resultText = data.choices[0].message.content;
 
       setScan({
         uri,
@@ -108,14 +136,20 @@ export default function PlantScanner() {
         </View>
       ) : scan?.uri ? (
         <View className="w-full items-center">
-          <Image source={{ uri: scan.uri }} className="h-96 w-full rounded-xl" resizeMode="cover" />
-          <View className="mt-4 w-full rounded-lg bg-white p-4 shadow">
-            <Text className="mb-2 text-lg font-bold text-green-700">Diagnosis Result</Text>
-            <Text className="text-sm text-gray-800">{scan.issue}</Text>
-          </View>
-          <Pressable onPress={reset} className="mt-6 rounded-lg bg-green-600 px-4 py-2">
-            <Text className="font-semibold text-white">Scan Another</Text>
-          </Pressable>
+          <ScrollView showsVerticalScrollIndicator={false}>
+            <Image
+              source={{ uri: scan.uri }}
+              className="h-96 w-full rounded-xl"
+              resizeMode="cover"
+            />
+            <View className="mt-4 w-full rounded-lg bg-white p-4 shadow">
+              <Text className="mb-2 text-lg font-bold text-green-700">Diagnosis Result</Text>
+              <Text className="text-sm text-gray-800">{scan.issue}</Text>
+            </View>
+            <Pressable onPress={reset} className="mt-6 rounded-lg bg-green-600 px-4 py-2">
+              <Text className="font-semibold text-white">Scan Another</Text>
+            </Pressable>
+          </ScrollView>
         </View>
       ) : (
         <>
