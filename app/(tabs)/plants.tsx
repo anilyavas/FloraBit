@@ -1,5 +1,5 @@
 import { useAuth } from '@clerk/clerk-expo';
-import { AntDesign, FontAwesome } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 import { useEffect, useState } from 'react';
 import {
   SafeAreaView,
@@ -96,7 +96,6 @@ export default function PlantCollection() {
                     )}
                   </View>
                   <View className="flex-row gap-3">
-                    <AntDesign name="edit" size={20} color="grey" />
                     <FontAwesome
                       name="trash"
                       size={20}
