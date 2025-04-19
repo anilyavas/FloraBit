@@ -1,47 +1,41 @@
 # 🌿 FloraBit
 
-FloraBit is a beautiful mobile application built with React Native (Expo) that helps users identify plant issues and provides care recommendations — powered by OpenAI’s vision model. Snap a photo, analyze, and get actionable insights in seconds.
-
-<div align="center">
-  <img src="https://img.shields.io/github/license/anilyavas/FloraBit?style=flat-square" />
-  <img src="https://img.shields.io/github/languages/top/anilyavas/FloraBit?style=flat-square" />
-  <img src="https://img.shields.io/github/last-commit/anilyavas/FloraBit?style=flat-square" />
-</div>
-
----
+FloraBit is a cross-platform mobile application designed to help users identify, diagnose, and care for their plants. By leveraging AI and modern mobile technologies, FloraBit provides users with tools to maintain healthy plants and cultivate their own vegetables.
 
 ## ✨ Features
 
-- 📷 **Plant Scanner**: Use your camera to snap a photo of a plant.
-- 🤖 **AI Diagnosis**: Analyze visible diseases or health issues with GPT-4 Turbo (Vision).
-- 🪴 **Care Guide**: View light, water, temperature, and humidity needs for each plant.
-- 📘 **Plant Encyclopedia**: Browse common houseplants and vegetables with full details.
-- 🧠 **Zustand Store**: Global state management for scan results and loading state.
-- 🔐 **User Authentication**: Built-in auth using Clerk.
+- **📷 Plant Scanner**: Capture images of plants to identify species and detect potential health issues.
+- **🧠 AI Diagnosis**: Utilize GPT-4 Turbo (Vision) to analyze plant health and suggest remedies.
+- **📚 Care Guide**: Access detailed information on light, water, temperature, and humidity requirements for various plants.
+- **🌱 Plant Encyclopedia**: Explore a comprehensive database of common houseplants and vegetables.
+- **🗂️ State Management**: Manage application state efficiently using Zustand.
+- **🔐 User Authentication**: Secure user accounts with Clerk integration.
 
----
+## 🚀 Tech Stack
 
-## 📸 Demo
+- **Framework**: [Expo](https://expo.dev/) + [React Native](https://reactnative.dev/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **State Management**: [Zustand](https://github.com/pmndrs/zustand)
+- **Authentication**: [Clerk](https://clerk.dev/)
+- **AI Integration**: [OpenAI API](https://platform.openai.com/docs) for vision analysis
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) via [NativeWind](https://www.nativewind.dev/)
 
-Coming soon
+## 📱 Screenshots
 
----
+Coming Soon
 
-## 🧱 Tech Stack
+## 📄 License
 
-- **Expo + React Native**
-- **TypeScript**
-- **Zustand** (for state management)
-- **Clerk** (authentication)
-- **OpenAI API** (vision analysis)
-- **Tailwind (NativeWind)** for styling
+FloraBit is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
----
+## 🛠 Installation
 
-## 📦 Installation
+To set up the project locally:
 
 ```bash
 git clone https://github.com/anilyavas/FloraBit.git
 cd FloraBit
 npm install
 npx expo start
+
+
