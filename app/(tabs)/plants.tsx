@@ -11,6 +11,7 @@ import {
   Pressable,
   Modal,
   Image,
+  ScrollView,
 } from 'react-native';
 
 import ConfirmDeleteModal from '~/components/ConfirmDelete';
@@ -71,7 +72,7 @@ export default function PlantCollection() {
             </Text>
           </View>
         ) : (
-          <View className="p-4">
+          <ScrollView className="flex-1 p-4 pb-8" showsVerticalScrollIndicator={false}>
             {plants.map((plant) => (
               <View
                 key={plant.id}
@@ -120,7 +121,7 @@ export default function PlantCollection() {
                 </View>
               </View>
             ))}
-          </View>
+          </ScrollView>
         )}
         <Modal
           animationType="slide"

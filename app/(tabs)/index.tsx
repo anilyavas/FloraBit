@@ -17,7 +17,7 @@ export default function Home() {
           <Image source={{ uri: user?.imageUrl }} className="h-10 w-10 rounded-full" />
           <Text className="text-xl font-bold text-gray-700">Welcome {user?.firstName}</Text>
         </View>
-        <ScrollView className="flex-1" showsVerticalScrollIndicator={false}>
+        <ScrollView className="mb-8 flex-1" showsVerticalScrollIndicator={false}>
           <View className="p-2">
             <Text className="pl-4 text-xl font-bold text-gray-500">Explore Plants</Text>
             <PlantCard />

@@ -146,7 +146,9 @@ export default function PlantScanner() {
               <Text className="mb-2 text-lg font-bold text-green-700">Diagnosis Result</Text>
               <Text className="text-sm text-gray-800">{scan.issue}</Text>
             </View>
-            <Pressable onPress={reset} className="mt-6 rounded-lg bg-green-600 px-4 py-2">
+            <Pressable
+              onPress={reset}
+              className="mt-6 items-center self-center rounded-lg bg-green-600 px-4 py-2">
               <Text className="font-semibold text-white">Scan Another</Text>
             </Pressable>
           </ScrollView>
