@@ -1,19 +1,19 @@
 import { Link } from 'expo-router';
 import { FlatList, View, Text, Image, Pressable } from 'react-native';
 
-import plants from '../assets/plants.json';
+import vegetables from '../assets/vegetables.json';
 
-export default function PlantCard() {
+export default function VegetableCard() {
   return (
     <View className="flex-1 bg-[#C8D8C4] py-4">
       <FlatList
-        data={plants}
+        data={vegetables}
         horizontal
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.id}
         contentContainerStyle={{ paddingHorizontal: 16 }}
         renderItem={({ item }) => (
-          <Link asChild href={`/plant/${item.id}`}>
+          <Link asChild href={`/vegetable/${item.id}`}>
             <Pressable className="mr-4 w-40 items-center rounded-2xl bg-white p-4 shadow shadow-black/10">
               {item.image ? (
                 <Image

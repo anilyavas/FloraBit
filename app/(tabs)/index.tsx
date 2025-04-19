@@ -3,7 +3,7 @@ import { View, SafeAreaView, StatusBar, Platform, Text, Image, ScrollView } from
 
 import PlantCard from '~/components/PlantCard';
 import PlantCare from '~/components/PlantCare';
-
+import VegetableCard from '~/components/VetetableCard';
 export default function Home() {
   const { user } = useClerk();
   return (
@@ -21,6 +21,10 @@ export default function Home() {
           <View className="p-2">
             <Text className="pl-4 text-xl font-bold text-gray-500">Explore Plants</Text>
             <PlantCard />
+          </View>
+          <View className="p-2">
+            <Text className="pl-4 text-xl font-bold text-gray-500">Grow Your Own Vegetables</Text>
+            <VegetableCard />
           </View>
           <View className="p-2">
             <Text className="pl-4 text-xl font-bold text-gray-500">General Plant Care</Text>
