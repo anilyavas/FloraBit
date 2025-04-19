@@ -23,7 +23,7 @@ FloraBit is a beautiful mobile application built with React Native (Expo) that h
 
 ## 📸 Demo
 
-Coming soon — or drop your own preview GIF/screenshots here.
+Coming soon
 
 ---
 
