@@ -1,12 +1,22 @@
 import { FontAwesome } from '@expo/vector-icons';
 import { router, useLocalSearchParams } from 'expo-router';
-import { View, Text, SafeAreaView, Image, ScrollView, Pressable } from 'react-native';
+import { useState } from 'react';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Image,
+  ScrollView,
+  Pressable,
+  ActivityIndicator,
+} from 'react-native';
 
 import vegetable from '../../assets/vegetables.json';
 
 export default function PlantDetails() {
   const { id } = useLocalSearchParams();
   const plant = vegetable.find((p) => p.id === id);
+  const [loading, setLoading] = useState(true);
 
   return (
     <View className="flex-1 bg-[#E7F0DC]">
@@ -19,13 +29,19 @@ export default function PlantDetails() {
         </View>
 
         <ScrollView className="flex-1 px-4 pb-12 pt-2" showsVerticalScrollIndicator={false}>
-          {plant?.image && (
-            <Image
-              source={{ uri: plant.image }}
-              className="mb-6 h-96 w-full rounded-3xl shadow-lg"
-              resizeMode="cover"
-            />
-          )}
+          <View className="mb-6 h-96 w-full items-center justify-center overflow-hidden rounded-3xl shadow-lg">
+            {loading && (
+              <ActivityIndicator size="large" color="#4B6C4A" className="absolute z-10" />
+            )}
+            {plant?.image && (
+              <Image
+                source={{ uri: plant.image }}
+                className="h-full w-full"
+                resizeMode="cover"
+                onLoadEnd={() => setLoading(false)}
+              />
+            )}
+          </View>
 
           <Text className="mb-2 text-3xl font-bold text-[#2F3E2E]">{plant?.name}</Text>
           <Text className="mb-6 text-base italic text-gray-700">{plant?.scientific_name}</Text>
