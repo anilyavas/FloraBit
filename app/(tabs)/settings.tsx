@@ -62,7 +62,7 @@ export default function Settings() {
         <View className="p-4">
           {user?.imageUrl && <Image source={{ uri: user.imageUrl }} style={styles.image} />}
 
-          <View className="rounded-xl bg-white/20 p-4">
+          <View className="rounded-xl bg-white/90 p-4">
             <View style={styles.infoContainer}>
               <Text style={styles.infoTitle}>Email Address:</Text>
               <Text style={styles.infoText}>{user?.primaryEmailAddress?.emailAddress}</Text>
