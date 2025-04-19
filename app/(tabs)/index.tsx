@@ -27,12 +27,12 @@ export default function Home() {
             <VegetableCard />
           </View>
           <View className="p-2">
-            <Text className="pl-4 text-xl font-bold text-gray-500">General Plant Care</Text>
+            <Text className="pl-4 text-xl font-bold text-gray-500">Plant Care Tips</Text>
             <PlantCare />
           </View>
         </ScrollView>
       </SafeAreaView>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="default" />
     </View>
   );
 }
