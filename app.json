@@ -33,14 +33,14 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anilyavas.FloraBit"
+      "bundleIdentifier": "com.florabit.FloraBit"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.anilyavas.FloraBit"
+      "package": "com.florabit.FloraBit"
     },
     "extra": {
       "eas": {
