@@ -14,7 +14,7 @@ import {
   Platform,
 } from 'react-native';
 
-export default function Page() {
+export default function SignIn() {
   const { signIn, setActive, isLoaded } = useSignIn();
   const { startOAuthFlow: googleAuth } = useOAuth({ strategy: 'oauth_google' });
   const { startOAuthFlow: appleAuth } = useOAuth({ strategy: 'oauth_apple' });
