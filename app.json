@@ -16,7 +16,8 @@
         {
           "launchMode": "most-recent"
         }
-      ]
+      ],
+      "expo-secure-store"
     ],
     "experiments": {
       "typedRoutes": true,
