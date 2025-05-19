@@ -49,6 +49,7 @@
     "react-native-screens": "~4.10.0",
     "react-native-url-polyfill": "^2.0.0",
     "react-native-web": "^0.20.0",
+    "readable-stream": "^4.7.0",
     "zustand": "^5.0.4"
   },
   "devDependencies": {
